@@ -1,0 +1,22 @@
+{
+  "name": "lambda-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm run dev",
+    "build": "tsc && vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "pixi.js": "^8.8.1",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.3",
+    "vite": "^6.2.0"
+  }
+}
