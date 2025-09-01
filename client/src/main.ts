@@ -58,8 +58,7 @@ const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
     hudBg.fill();
     hudBackground.addChild(hudBg);
     hudContainer.addChildAt(hudBackground, 0);
-    
-    const socket = new WebSocket('ws://localhost:3000');
+    const socket = new WebSocket('ws://testserver2-env.eba-zs6amxyp.us-east-1.elasticbeanstalk.com/');
     let sessionId = '';
 
     socket.onopen = () => {

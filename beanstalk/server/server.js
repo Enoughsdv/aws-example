@@ -99,6 +99,7 @@ function broadcastPlayerMove(sessionId, x, y) {
     });
 }
 
-server.listen(3000, () => {
-    console.log('Servidor iniciado en puerto 3000');
+const port = process.env.PORT || 8080;
+server.listen(port, () => {
+    console.log(`Servidor iniciado en puerto ${port}`);
 });
