@@ -5,6 +5,7 @@ import { Camera } from './camera';
 import { NPC } from './npc';
 
 const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
+const BEANSTALK_URL = import.meta.env.VITE_BEANSTALK_URL || 'ws://localhost/';
 
 (async () => {
     const app = new Application();
@@ -13,7 +14,7 @@ const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
     
     const playerData = { playerName: 'Client' };
 
-    const texture = await Assets.load('/assets/player_waiting.png');
+    const texture = await Assets.load('/assets/player.png');
     const npcTexture = await Assets.load('/assets/npc1.png');
     
     const otherPlayers: Map<string, Player> = new Map();
@@ -58,7 +59,7 @@ const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
     hudBg.fill();
     hudBackground.addChild(hudBg);
     hudContainer.addChildAt(hudBackground, 0);
-    const socket = new WebSocket('ws://testserver2-env.eba-zs6amxyp.us-east-1.elasticbeanstalk.com/');
+    const socket = new WebSocket(BEANSTALK_URL);
     let sessionId = '';
 
     socket.onopen = () => {
